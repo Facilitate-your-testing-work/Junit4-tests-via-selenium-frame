@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="stormport">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="../../eclipse/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../eclipse/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="Selerium userlibrary-2020.userclasspath">
+        <pathelement location="../../Selenium-java-3.141.59/byte-buddy-1.8.15.jar"/>
+        <pathelement location="../../Selenium-java-3.141.59/client-combined-3.141.59.jar"/>
+        <pathelement location="../../Selenium-java-3.141.59/client-combined-3.141.59-sources.jar"/>
+        <pathelement location="../../Selenium-java-3.141.59/commons-exec-1.3.jar"/>
+        <pathelement location="../../Selenium-java-3.141.59/guava-25.0-jre.jar"/>
+        <pathelement location="../../Selenium-java-3.141.59/okhttp-3.11.0.jar"/>
+        <pathelement location="../../Selenium-java-3.141.59/okio-1.14.0.jar"/>
+        <pathelement location="../../Java/commons-io-2.6.jar"/>
+    </path>
+    <path id="stormport.classpath">
+        <pathelement location="."/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <path refid="Selerium userlibrary-2020.userclasspath"/>
+        <pathelement location="../../Java/commons-io-2.6.jar"/>
+    </path>
+    <target name="init">
+        <copy includeemptydirs="false" todir=".">
+            <fileset dir=".">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+        </delete>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="." includeantruntime="false" source="${source}" target="${target}">
+            <src path="."/>
+            <classpath refid="stormport.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="tesparentclass">
+        <java classname="tesparentclass" failonerror="true" fork="yes">
+            <classpath refid="stormport.classpath"/>
+        </java>
+    </target>
+    <target name="tesssparentclass">
+        <java classname="tesssparentclass" failonerror="true" fork="yes">
+            <classpath refid="stormport.classpath"/>
+        </java>
+    </target>
+    <target name="testparentclass">
+        <java classname="testparentclass" failonerror="true" fork="yes">
+            <classpath refid="stormport.classpath"/>
+        </java>
+    </target>
+    <target name="UseCaseGroup">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroup" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupLoginTest.dtest0100101Uid5ea5b9edd0f042799173d5e584abff98">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupLoginTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupLoginTest.dtest0100102Uid3b06048342d244fb96eb587aff3de4e1">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupLoginTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupLoginTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupLoginTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupLoginTest.test0100101Uid5ea5b9edd0f042799173d5e584abff98">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupLoginTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupLoginTest.test0100102Uid35307e2a20ab4a63b24fdb9f6895192c">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupLoginTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupLoginTest.test0100103Uid8cdf5efaa3614df2a8056fb93e8ed5c4">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupLoginTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupReceiveNewWorkOrder">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupReceiveNewWorkOrder" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupReceiveNewWorkOrder.test0200101Uid03daf907a65f4e4b82787d5db2d87fb6">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupReceiveNewWorkOrder" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupReceiveNewWorkOrder.test0200301Uid0d5e2659ce7e402e8e094c8913076996">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupReceiveNewWorkOrder" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupReceiveNewWorkOrderTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupReceiveNewWorkOrderTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupViewWorkOrder">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupViewWorkOrder" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupViewWorkOrderTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupViewWorkOrderTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="UseCaseGroupViewWorkOrderTest.test0300101Uid040a6df433e3468baa9719e2a47a6aea">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="UseCaseGroupViewWorkOrderTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="stormport.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

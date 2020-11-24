@@ -1,0 +1,38 @@
+---
+- name: SetBrowswerType
+  uid: 4ac86d7e-3dad-4932-a115-a4080849fa9f
+  parameters:
+  - name: browserType
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: LoginStormport
+  uid: 41596f1e-a676-4a55-a33a-2e51bccbdad6
+  parameters:
+  - name: emailAddress
+  - name: password
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: VerifyAsUsername
+  uid: cfeeace6-e136-40a0-9fd5-de54961b7493
+  parameters:
+  - name: userName
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: VerifyAsErrorMessage
+  uid: f198f18a-6b5d-4d86-92db-94afabf7c21f
+  parameters:
+  - name: expectedMessage
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: ChangePassword
+  uid: 7177f2c7-2bd7-4752-950b-9ed440036177
+  parameters:
+  - name: emailAddress
+  - name: password
+  - name: newPassword
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: SetTargetUrl
+  uid: 415c5caa-5fac-40ba-be7d-9f200ccb57bc
+  parameters:
+  - name: targetUrl
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: LogoutStormport
+  uid: 3613d6e9-4c2b-45ce-a9ea-d2ffa6f57a4a
+  parameters: []
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
